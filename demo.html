@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI Example Page</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/redmond/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <script src="jqueryUIForm.jquery.js"></script>
+    <script language="JavaScript" type="text/javascript">
+        $(function() {
+            $('input,select,textarea,fieldset').uiForm();
+        });
+    </script>
+    <style type="text/css" title="currentStyle">
+        fieldset{
+            margin: 10px 0px;
+        }
+        /*legend{padding: 3px;}*/
+    </style>
+</head>
+<body>
+
+<div class="main">
+    <form action="demo.html">
+        <fieldset >
+            <legend ><label>Кнопки</label></legend>
+            <table border="0" cellspacing="0" cellpadding="5">
+                <tr>
+                    <td class="tag">&lt;input type=&quot;<span class="type">submit</span>&quot;&gt; </td>
+                    <td>&nbsp;</td>
+                    <td><input type="submit" name="Submit" value="ОК!"></td>
+                    <td valign="top">&nbsp;</td>
+                    <td valign="top">Отправляет данные из формы на сервер (предполагается, что серверная программа их сможет принять и правильно обработать) </td>
+                </tr>
+                <tr>
+                    <td class="tag">&lt;input type=&quot;<span class="type">reset</span>&quot;&gt;</td>
+                    <td>&nbsp;</td>
+                    <td><input type="reset" name="Reset" value="Очистить"></td>
+                    <td valign="top">&nbsp;</td>
+                    <td valign="top">Очищает форму, восстанавливая значения по умолчанию</td>
+                </tr>
+                <tr>
+                    <td nowrap class="tag">&lt;input type=&quot;<span class="type">button</span>&quot;&gt;</td>
+                    <td>&nbsp;</td>
+                    <td><input type="button" name="Submit3" value="?????" onClick="this.style.background='pink'; alert('можно запустить любой сценарий JavaScript')"></td>
+                    <td valign="top">&nbsp;</td>
+                    <td valign="top">Выглядит как системная кнопка, но нажатие на нее всего лишь запускает клиентский сценарий JavaScript (этого же эффекта можно и достичь использованием обработчика onClick для любого элемента HTML-документа) </td>
+                </tr>
+                <tr>
+                    <td nowrap class="tag">&lt;input type=&quot;<span class="type">image</span>&quot;&gt;</td>
+                    <td>&nbsp;</td>
+                    <td><input name="imageField" type="image" src="../Objects/img/smallball.jpg" alt="аналог кнопки submit" width="26" height="26" border="0"></td>
+                    <td valign="top">&nbsp;</td>
+                    <td valign="top">Как и кнопка типа &quot;submit&quot;, отправляет данные на сервер, но выглядит нестандартным образом - например, просто как картинка </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Текстовые поля</legend>
+            <table border="0" cellspacing="0" cellpadding="5">
+                <tr>
+                    <td class="tag">&lt;input type=&quot;<span class="type">text</span>&quot;&gt; </td>
+                    <td>&nbsp;</td>
+                    <td><input name="textfield" type="text" value="можно ввести любой текст" size="36"></td>
+                    <td>&nbsp;</td>
+                    <td>однострочное поле ввода текста </td>
+                </tr>
+                <tr>
+                    <td nowrap class="tag">&lt;input type=&quot;<span class="type">password</span>&quot;&gt;</td>
+                    <td>&nbsp;</td>
+                    <td><input name="textfield2" type="password" value="йцукен" size="36"></td>
+                    <td>&nbsp;</td>
+                    <td>поле ввода пароля </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Переключатели</legend>
+            <table border="0" cellspacing="0" cellpadding="5">
+                <tr>
+                    <td nowrap  class="tag">&lt;input type=&quot;<span class="type">checkbox</span>&quot;&gt;</td>
+                    <td>&nbsp;</td>
+                    <td nowrap><input name="checkbox" type="checkbox" value="checkbox" checked>
+                        1&nbsp;&nbsp;
+                        <input type="checkbox" name="checkbox2" value="checkbox">
+                        2&nbsp;&nbsp;
+                        <input type="checkbox" name="checkbox3" value="checkbox">
+                        3 &nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>флажок (независимый переключатель) </td>
+                </tr>
+                <tr>
+                    <td class="tag">&lt;input type=&quot;<span class="type">radio</span>&quot;&gt;</td>
+                    <td>&nbsp;</td>
+                    <td><input name="radiobutton" type="radio" value="radiobutton">
+                        да&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input name="radiobutton" type="radio" value="radiobutton">
+                        нет</td>
+                    <td>&nbsp;</td>
+                    <td>радиокнопка (переключатель с зависимой фиксацией) </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Поле выбора файла</legend>
+            <p><span class="tag">&lt;input type=&quot;<span class="type">file</span>&quot;&gt;</span></p>
+            <h3>          <input name="file" type="file" size="50">
+                <br>
+                &nbsp;        &nbsp;</h3>
+        </fieldset>
+
+        <h2>Многострочное текстовое поле</h2>
+        <table border="0" cellspacing="0" cellpadding="5">
+            <tr>
+                <td nowrap><span class="tag">&lt;textarea&gt;</span>...<br>
+                    &nbsp;&nbsp;&nbsp;текст по умолчанию ... <span class="tag"><br>
+  &lt;/textarea&gt; </span></td>
+                <td>&nbsp;</td>
+                <td nowrap><textarea name="textfield3" cols="50">...
+текст по умолчанию
+...</textarea></td>
+                <td>&nbsp;</td>
+                <td>многострочное текстовое поле       </td>
+            </tr>
+        </table>
+
+
+        <br>
+        &nbsp;
+        <h2>Выпадающий список</h2>
+        <table border="0" cellspacing="0" cellpadding="5">
+            <tr>
+                <td class="tag">&lt;select&gt;</td>
+                <td>&nbsp;</td>
+                <td><select name="select">
+                    <option>раз</option>
+                    <option>два</option>
+                    <option>три</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td nowrap class="tag">&lt;select size=&quot;<span class="type">2</span>&quot;&gt;</td>
+                <td>&nbsp;</td>
+                <td><select name="select3" size="2">
+                    <option>раз</option>
+                    <option>два</option>
+                    <option>три</option>
+                    <option>четыре</option>
+                    <option>пять</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td nowrap class="tag">&lt;select size=&quot;<span class="type">2</span>&quot; <span class="type">multiple</span>&gt;</td>
+                <td>&nbsp;</td>
+                <td><select name="select2" size="2" multiple>
+                    <option>раз</option>
+                    <option>два</option>
+                    <option>три</option>
+                    <option>четыре</option>
+                    <option>пять</option>
+                </select></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+</body>
+</html>
